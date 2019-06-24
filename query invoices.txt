@@ -1,0 +1,5 @@
+SELECT ih.*,concat(d.fname," ",d.lname) as driver_name, c.fname, c.lname, c.address_line1 FROM tbl_invoice_header ih
+LEFT JOIN tbl_driver d on ih.driver_id = d.id
+LEFT JOIN tbl_customer c ON ih.customer_id = c.Cust_ID
+LEFT JOIN tbl_shipto sh ON ih.shipto_id = sh.customer_id
+WHERE ih.id = 3
